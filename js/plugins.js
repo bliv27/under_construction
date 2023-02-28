@@ -20,8 +20,9 @@
     }
   }
 
+  //Setup typewriter function when the page is loaded
   var app = document.getElementById('type_text');
-
+  
   var typewriter = new Typewriter(app, {
   loop: true,
   delay: 75,
@@ -42,9 +43,16 @@
   .deleteChars(8)
   .typeString('Enthusiast')
   .start();
+
+
 }());
 
-// Place any jQuery/helper plugins in here.
+/* 
+ * functions
+ * ----------------------------------------------------------
+ */
+
+// on click copy the phone number or email 
 function ClipboardCopy(type){
   if(type == 'phone'){
     navigator.clipboard.writeText('0423273004');
@@ -52,3 +60,9 @@ function ClipboardCopy(type){
     navigator.clipboard.writeText('david.raffin01@gmail.com');
   }
 };
+
+// on click of headshot image, scroll to contact
+function ScrollToContact(elm){
+  const element = document.getElementById("contact"); 
+  element.scrollIntoView({ behavior: "smooth" });
+}
