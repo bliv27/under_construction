@@ -28,16 +28,17 @@
   });
 
   typewriter
-  .pauseFor(300)
+  .typeString('Developer')
+  .pauseFor(500)
   .deleteChars(10)
   .typeString('Designer')
-  .pauseFor(300)
+  .pauseFor(500)
   .deleteChars(8)
   .typeString('Producer')
-  .pauseFor(300)
+  .pauseFor(500)
   .deleteChars(8)
   .typeString('Googler')
-  .pauseFor(300)
+  .pauseFor(500)
   .deleteChars(8)
   .typeString('Enthusiast')
   .start();
