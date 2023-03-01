@@ -72,7 +72,11 @@ function ClipboardCopy(type){
   }else if(type == 'email'){
     navigator.clipboard.writeText('david.raffin01@gmail.com');
   }
-  const icon = document.getElementById(type+"Copy");
+  const icon = document.getElementById("copied");
+  icon.classList.add('success')
+  setTimeout(function(){
+    icon.classList.remove('success')
+  }, 2000)
   
 };
 

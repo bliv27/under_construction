@@ -112,4 +112,36 @@ section #portfolio .examples a {
 }
 section #contact {
   border-radius: 0 0 2px 2px;
+  position: relative;
+}
+section #contact #copied {
+  position: absolute;
+  top: 110px;
+  left: 25%;
+  width: 50%;
+  text-align: center;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 0.3s ease 0s, transform 0s ease 0.3s;
+  color: steelblue;
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px 0;
+  transform: translateX(500px);
+}
+section #contact #copied.success {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease 0s;
+}
+section #contact .fa-mobile {
+  font-size: 1.5rem;
+  margin: 0 3px;
+  vertical-align: top;
+}
+section #contact .btn {
+  background-color: white;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-left: 10px;
 }/*# sourceMappingURL=theme.css.map */
