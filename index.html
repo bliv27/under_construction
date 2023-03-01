@@ -24,7 +24,12 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -37,30 +42,32 @@
           <img src="img/david_raffin.jpg" alt="David Raffin" />
         </a>
       </div>
-      <h1>David Raffin: Web <span id="type_text">Developer</span></h1>
-      <p><em>Crafting experiences for the web since 2010</em></p>
-      <p>As a skilled web developer, designer, and producer, I bring a wealth of experience to help bring your digital vision to life. With a passion for creating intuitive, visually stunning websites, I pride myself on staying up-to-date with the latest trends and technologies. From coding and design to project management, I have the skills and expertise to deliver exceptional results that exceed your expectations. Let's collaborate to create a dynamic online presence that engages and delights your audience.</p>
+      <div class="content">
+        <h1>David Raffin: Web <span id="type_text">Developer</span></h1>
+        <p><em>Crafting experiences for the web since 2010</em></p>
+        <p>As a skilled web developer, designer, and producer, I bring a wealth of experience to help bring your digital vision to life. With a passion for creating intuitive, visually stunning websites, I pride myself on staying up-to-date with the latest trends and technologies. From coding and design to project management, I have the skills and expertise to deliver exceptional results that exceed your expectations. Let's collaborate to create a dynamic online presence that engages and delights your audience.</p>
+      </div>
     </article>
     <article id="portfolio">
       <img src="img/construction.jpg" alt="under construction"/>
       <h2>Sorry.. My portfolio is under construction at the moment</h2>
       <p>While you wait you can check out a few of the public websites I've designed & developed:</p>
       <ul>
-        <li><a href="https://www.h4consulting.com.au/">H4 Consulting - 2022</a></li>
-        <li><a href="https://www.dincel.com.au/">Dincel - 2020</a></li>
-        <li><a href="http://www.thetraveller.sg/">The Traveller - 2014</a></li>
-        <li><a href="https://www.undiewarehouse.com.au/">Undie Warehouse - 2010</a></li>
+        <li><a target="_blank" rel="nofollow" href="https://www.h4consulting.com.au/">H4 Consulting - 2022 Worpress</a></li>
+        <li><a target="_blank" rel="nofollow" href="https://www.dincel.com.au/">Dincel - 2020 Odoo</a></li>
+        <li><a target="_blank" rel="nofollow" href="http://www.thetraveller.sg/">The Traveller - 2014 Worpress</a></li>
+        <li><a target="_blank" rel="nofollow" href="https://www.undiewarehouse.com.au/">Undie Warehouse - 2010 Magento</a></li>
       </ul>
     </article>
     <article id="contact">
       <h2>Get in contact!</h2>
       <h3>
           <a href="mailto:david.raffin01@gmail.com"><i class="icon email" ></i> david.raffin01@gmail.com</a> 
-          <a onClick="ClipboardCopy('email')"><i class="icon copy"></i></a>
+          <a onClick="ClipboardCopy('email')"><i id="emailCopy" class="icon copy"></i></a>
       </h3>
       <h3>
         <a href="tel:0423273004"><i class="icon phone" ></i> 0423 273 004</a> 
-        <a onClick="ClipboardCopy('phone')"><i class="icon copy"></i>
+        <a onClick="ClipboardCopy('phone')"><i id="phoneCopy" class="icon copy"></i>
       </h3>
       <h3>
         <a target="_blank" rel="nofollow" href="https://www.linkedin"></a><i class="icon linkedin" ></i> </a>

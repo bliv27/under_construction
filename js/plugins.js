@@ -30,18 +30,14 @@
 
   typewriter
   .typeString('Developer')
-  .pauseFor(500)
+  .pauseFor(2500)
   .deleteChars(10)
   .typeString('Designer')
-  .pauseFor(500)
+  .pauseFor(2500)
   .deleteChars(8)
   .typeString('Producer')
-  .pauseFor(500)
+  .pauseFor(2500)
   .deleteChars(8)
-  .typeString('Googler')
-  .pauseFor(500)
-  .deleteChars(8)
-  .typeString('Enthusiast')
   .start();
 
 
@@ -59,6 +55,8 @@ function ClipboardCopy(type){
   }else if(type == 'email'){
     navigator.clipboard.writeText('david.raffin01@gmail.com');
   }
+  const icon = document.getElementById(type+"Copy");
+  
 };
 
 // on click of headshot image, scroll to contact
