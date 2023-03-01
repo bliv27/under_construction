@@ -1,15 +1,27 @@
 
+$text: #536872;
+$text-hover: #536872;
+
 body{
-    background-color: black;
-    color:#536872;
+    background: url('../img/zwartevilt.png');
+    color:$text;
 
     h1, h2{
         font-family: 'Oswald', sans-serif;
         text-align: center;
     }
 
-    p{
+    p, a{
         font-family: 'EB Garamond', serif;
+        color:$text;
+        
+    }
+    a{  
+        text-decoration: none;
+        cursor: pointer;
+        &:hover{
+            color:$text-hover;
+        }
     }
 
     h1{
@@ -30,21 +42,29 @@ body{
 section{
     min-width: 500px;
     max-width: 700px;
-    margin: auto;
+    margin: 200px auto 0;
     width: 500px;
-    padding: 10px;
+    padding: 3px;
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, .5);
     
     .content, #portfolio, #contact{
-        background-color: #F1F3F5;
+        // background-color: #F1F3F5;
+        background: url('../img/fabric_1.png');
         margin:0;
-        padding:0;
+        padding:10px 50px;
+        
     }
 
     #description{
-        margin-top:30px;
+        position:relative;
 
         .header{
             text-align: center;
+            position:absolute;
+            top:-100px;
+            width:100%;
+            margin:0 auto;
+
             a{
                 width: 200px;
                 height: 200px;
@@ -63,18 +83,16 @@ section{
         }
         .content{
             border-radius: 2px 2px 0 0 ;
-            padding:20px 10px;
             display: block;
+            padding-top:100px;
         }
     }
 
     #portfolio{
         border-radius: 0;
-        padding:20px 10px;
     }
 
     #contact{
         border-radius: 0 0 2px 2px;
-        padding:20px 10px;
     }
 }
