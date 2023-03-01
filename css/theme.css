@@ -9,6 +9,8 @@ body h1, body h2 {
 body p, body a {
   font-family: "EB Garamond", serif;
   color: #536872;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
 }
 body a {
   text-decoration: none;
@@ -16,6 +18,26 @@ body a {
 }
 body a:hover {
   color: #536872;
+  background-color: white;
+}
+body h1 {
+  line-height: 2rem;
+}
+body h1 span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: steelblue;
+}
+body h1 em {
+  display: block;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+}
+body h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: steelblue;
 }
 body h3 {
   font-family: "EB Garamond", serif;

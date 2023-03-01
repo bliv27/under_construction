@@ -24,23 +24,14 @@
   var app = document.getElementById('type_text');
   
   var typewriter = new Typewriter(app, {
-  loop: true,
+  loop: false,
   delay: 75,
+  cursor:'',
   });
 
   typewriter
-  .typeString('Developer')
-  .pauseFor(2500)
-  .deleteChars(10)
-  .typeString('Designer')
-  .pauseFor(2500)
-  .deleteChars(8)
-  .typeString('Producer')
-  .pauseFor(2500)
-  .deleteChars(8)
+  .typeString('Web Developer | Designer | Producer')
   .start();
-
-
 }());
 
 /* 
