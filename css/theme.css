@@ -88,6 +88,28 @@ section #description .content {
 section #portfolio {
   border-radius: 0;
 }
+section #portfolio .construction {
+  position: relative;
+}
+section #portfolio .construction i {
+  font-size: 5rem;
+  position: absolute;
+  top: -23px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+section #portfolio .construction h2 {
+  position: relative;
+  z-index: 100;
+}
+section #portfolio .examples {
+  display: flex;
+  flex-flow: wrap;
+}
+section #portfolio .examples a {
+  width: 50%;
+}
 section #contact {
   border-radius: 0 0 2px 2px;
 }/*# sourceMappingURL=theme.css.map */

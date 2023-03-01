@@ -105,6 +105,28 @@ section{
 
     #portfolio{
         border-radius: 0;
+        .construction{
+            position:relative;
+            i{
+                font-size: 5rem;
+                position: absolute;
+                top: -23px;
+                width: 100%;
+                text-align: center;
+                color: white;
+            }
+            h2{
+                position: relative;
+                z-index:100;
+            }
+        }
+        .examples{
+            display: flex;
+            flex-flow: wrap;
+            a{
+                width:50%;
+            }
+        }
     }
 
     #contact{

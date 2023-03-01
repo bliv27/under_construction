@@ -32,6 +32,32 @@
   typewriter
   .typeString('Web Developer | Designer | Producer')
   .start();
+
+
+  //tooltips for 
+  tippy('#tt-h4', {
+    content: '2022: Custom front/backend theme built in Wordpress using gantry5 framework <em>MySQL, PHP, JS, SCSS, HTML, TWIG/YAML</em>',
+    allowHTML: true,
+  });
+  tippy('#tt-din', {
+    content: '2020: Custom front/backend built in Odoo14 <em>PostgreSQL, JS, SCSS, HTML, qWeb/XML</em>',
+    allowHTML: true,
+  });
+  tippy('#tt-trav', {
+    content: '2014: Custom theme built in Wordpress<em>MySQL, PHP, JS, CSS, HTML</em>',
+    allowHTML: true,
+  });
+  tippy('#tt-uw', {
+    content: '2010: Custom theme built in Magento <em>JS, CSS, HTML</em>',
+    allowHTML: true,
+  });
+  tippy('#phoneCopy', {
+    content: 'Copy phone number',
+  });
+  tippy('#emailCopy', {
+    content: 'Copy email address',
+  });
+
 }());
 
 /* 
