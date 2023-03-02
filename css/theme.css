@@ -1,3 +1,19 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotationreverse {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 body {
   background: url("../img/zwartevilt.png");
   color: #536872;
@@ -9,7 +25,7 @@ body h1, body h2 {
 body p, body a {
   font-family: "EB Garamond", serif;
   color: #536872;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.4rem;
 }
 body a {
@@ -46,7 +62,7 @@ body h3 {
 section {
   min-width: 500px;
   max-width: 700px;
-  margin: 200px auto 0;
+  margin: 150px auto 0;
   width: 500px;
   padding: 3px;
   box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.5);
@@ -89,50 +105,95 @@ section #portfolio {
   border-radius: 0;
 }
 section #portfolio .construction {
-  position: relative;
-}
-section #portfolio .construction i {
-  font-size: 5rem;
-  position: absolute;
-  top: -23px;
-  width: 100%;
   text-align: center;
+}
+section #portfolio .construction .icon-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+}
+section #portfolio .construction .icon-wrapper i {
+  position: absolute;
   color: white;
+}
+section #portfolio .construction .icon-wrapper i.cog1 {
+  font-size: 5rem;
+  top: -3px;
+  left: 8px;
+  text-align: center;
+  animation: rotation 4s infinite linear;
+}
+section #portfolio .construction .icon-wrapper i.cog2 {
+  font-size: 2.5rem;
+  top: -4px;
+  left: -25px;
+  text-align: center;
+  animation: rotationreverse 2s infinite linear;
+}
+section #portfolio .construction .icon-wrapper i.cog3 {
+  font-size: 2.5rem;
+  top: 34px;
+  left: 76px;
+  text-align: center;
+  animation: rotationreverse 2s infinite linear;
 }
 section #portfolio .construction h2 {
   position: relative;
   z-index: 100;
+  margin: 10px 0 30px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 section #portfolio .examples {
   display: flex;
   flex-flow: wrap;
+  padding-bottom: 45px;
+  border-bottom: 1px solid white;
 }
 section #portfolio .examples a {
-  width: 50%;
+  flex: 1 1 0px;
+  padding: 5px 40px;
+  margin: 3px 0;
+  text-align: center;
+  border-radius: 3px;
+}
+section #portfolio .examples a i {
+  display: block;
+  color: steelblue;
 }
 section #contact {
   border-radius: 0 0 2px 2px;
+  margin-bottom: 30px;
   position: relative;
 }
 section #contact #copied {
   position: absolute;
-  top: 110px;
-  left: 25%;
-  width: 50%;
+  top: 50px;
+  left: 200px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   text-align: center;
   opacity: 0;
   z-index: 100;
   transition: opacity 0.3s ease 0s, transform 0s ease 0.3s;
   color: steelblue;
   background-color: white;
-  border-radius: 3px;
-  padding: 10px 0;
-  transform: translateX(500px);
+  transform: translateX(250px);
+}
+section #contact #copied h2 {
+  margin: 40px 0;
+  line-height: 20px;
 }
 section #contact #copied.success {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 0.3s ease 0s;
+}
+section #contact h2 {
+  margin-top: 0;
 }
 section #contact .fa-mobile {
   font-size: 1.5rem;
@@ -142,6 +203,19 @@ section #contact .fa-mobile {
 section #contact .btn {
   background-color: white;
   border-radius: 3px;
-  padding: 2px 4px;
+  padding: 3px 6px;
   margin-left: 10px;
+}
+
+.tippy-tooltip.david-theme {
+  background-color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  color: steelblue;
+  font-size: 1.05rem;
+  font-family: "EB Garamond", serif;
+}
+.tippy-tooltip.david-theme span {
+  text-align: center;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.5);
 }/*# sourceMappingURL=theme.css.map */

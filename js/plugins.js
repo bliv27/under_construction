@@ -36,26 +36,40 @@
 
   //tooltips for 
   tippy('#tt-h4', {
-    content: '2022: Custom front/backend theme built in Wordpress using gantry5 framework <em>MySQL, PHP, JS, SCSS, HTML, TWIG/YAML</em>',
+    content: '2022: Custom front/backend theme built in Wordpress using gantry5 framework<br/><span>MySQL, PHP, JS, SCSS, HTML, TWIG/YAML</span>',
     allowHTML: true,
+    theme:'david',
+    maxWidth: 200,
+    placement: 'left',
   });
   tippy('#tt-din', {
-    content: '2020: Custom front/backend built in Odoo14 <em>PostgreSQL, JS, SCSS, HTML, qWeb/XML</em>',
+    content: '2020: Custom front/backend built in Odoo14<br/><span>PostgreSQL, JS, SCSS, HTML, qWeb/XML</span>',
     allowHTML: true,
+    theme:'david',
+    maxWidth: 200,
+    placement: 'right',
   });
   tippy('#tt-trav', {
-    content: '2014: Custom theme built in Wordpress<em>MySQL, PHP, JS, CSS, HTML</em>',
+    content: '2014: Custom theme built in Wordpress<br/><span>MySQL, PHP, JS, CSS, HTML</span>',
     allowHTML: true,
+    theme:'david',
+    maxWidth: 200,
+    placement: 'left',
   });
   tippy('#tt-uw', {
-    content: '2010: Custom theme built in Magento <em>JS, CSS, HTML</em>',
+    content: '2010: Custom theme built in Magento<br/><span>JS, CSS, HTML</span>',
     allowHTML: true,
+    theme:'david',
+    maxWidth: 200,
+    placement: 'right',
   });
   tippy('#phoneCopy', {
     content: 'Copy phone number',
+    theme:'david',
   });
   tippy('#emailCopy', {
     content: 'Copy email address',
+    theme:'david',
   });
 
 }());
