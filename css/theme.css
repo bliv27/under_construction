@@ -57,6 +57,7 @@ body h2 {
 }
 body h3 {
   font-family: "EB Garamond", serif;
+  margin: 5px 0;
 }
 
 section {
@@ -167,6 +168,7 @@ section #contact {
   border-radius: 0 0 2px 2px;
   margin-bottom: 30px;
   position: relative;
+  text-align: center;
 }
 section #contact #copied {
   position: absolute;
@@ -195,16 +197,37 @@ section #contact #copied.success {
 section #contact h2 {
   margin-top: 0;
 }
-section #contact .fa-mobile {
+section #contact .contactWrapper {
+  display: inline-block;
+  text-align: left;
+  padding-left: 20px;
+}
+section #contact .contactWrapper i {
+  color: steelblue;
+}
+section #contact .contactWrapper .fa-mobile {
   font-size: 1.5rem;
   margin: 0 3px;
   vertical-align: top;
 }
-section #contact .btn {
+section #contact .contactWrapper h3 {
+  display: flex;
+}
+section #contact .contactWrapper h3:hover .btn {
+  opacity: 1;
+  transform: scale(1);
+}
+section #contact .contactWrapper h3 a {
+  padding: 2px 5px;
+}
+section #contact .contactWrapper .btn {
   background-color: white;
   border-radius: 3px;
   padding: 3px 6px;
   margin-left: 10px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease 0s;
 }
 
 .tippy-tooltip.david-theme {

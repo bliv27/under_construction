@@ -64,6 +64,7 @@ body{
 
     h3{
         font-family: 'EB Garamond', serif;
+        margin:5px 0;
     }
     
     
@@ -187,6 +188,8 @@ section{
         border-radius: 0 0 2px 2px;
         margin-bottom:30px;
         position: relative;
+        text-align: center;
+
         #copied{
             position: absolute;
             top:50px;
@@ -217,17 +220,43 @@ section{
             margin-top:0;
         }
 
-        .fa-mobile{
-            font-size: 1.5rem;
-            margin: 0 3px;
-            vertical-align: top;
-        }
+        
 
-        .btn{
-            background-color: white;
-            border-radius: 3px;
-            padding:3px 6px;
-            margin-left:10px;
+        .contactWrapper{
+            display:inline-block;
+            text-align: left;
+            padding-left: 20px;
+            
+            i{
+                color:steelblue;
+            }
+            .fa-mobile{
+                font-size: 1.5rem;
+                margin: 0 3px;
+                vertical-align: top;
+            }
+            h3{
+                display: flex;
+                &:hover{
+                    .btn{
+                        opacity: 1;
+                        transform:scale(1);
+                    }
+                }
+                a{
+                    padding: 2px 5px;
+                }
+            }
+    
+            .btn{
+                background-color: white;
+                border-radius: 3px;
+                padding:3px 6px;
+                margin-left:10px;
+                opacity: 0;
+                transform:scale(0);
+                transition:all 0.3s ease 0s;
+            }
         }
     }
 }
