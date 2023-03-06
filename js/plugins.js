@@ -102,8 +102,8 @@
  * ----------------------------------------------------------
  */
 
+//send click to google analytics event
 function gaLinkClicked(elm){
-  console.log('link_trigger: '+elm.href)
   window.dataLayer.push({
     'event':'link_trigger', 
     'link':elm.href
@@ -118,7 +118,6 @@ function ClipboardCopy(type){
     navigator.clipboard.writeText('hello@davidraffin.com.au');
   }
   //google analytics
-  console.log('copied_trigger: '+type)
   window.dataLayer.push({
     'event':'copied_trigger', 
     'copied':type
@@ -128,8 +127,6 @@ function ClipboardCopy(type){
   setTimeout(function(){
     icon.classList.remove('success')
   }, 2000)
-
-
 };
 
 // on click of headshot image, scroll to contact
