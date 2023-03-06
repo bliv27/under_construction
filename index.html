@@ -38,41 +38,42 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section>
     <article id="description">
-      <div class="header">
+      <div class="header-image">
         <a onClick="ScrollToContact()">
           <img src="img/david_raffin.jpg" alt="David Raffin" />
         </a>
       </div>
       <div class="content">
-        <h1>David Raffin<br/>
-          <span id="type_text"></span>
-        </h1>
+        <h1 class="heading">David Raffin</h1>
+        <h2 class="underHeading" id="type_text"></h2>
         <p>I bring a wealth of experience to help bring your digital vision to life, having crafted online experiences from concept to deployment for several years. With a passion for creating intuitive, visually stunning websites, I pride myself on staying up-to-date with the latest trends and technologies. From coding and design to project management, I have the skills and expertise to deliver exceptional results that exceed your expectations. Let's collaborate to create a dynamic online presence that engages and delights your audience.</p>
       </div>
     </article>
     <article id="portfolio">
-      <div class="construction">
+      <div class="content">
+        <h2 class="heading">Portfolio under construction</h2>
+        <p class="underHeading">While I work on the main portfolio feel free to check out a few of the public websites I've designed & developed:</p>
+        <div class="examples">
+          <a onclick="gaLinkClicked(this)" id="tt-h4" target="_blank" rel="nofollow" href="https://www.h4consulting.com.au/">
+            <i class="fa fa-external-link" aria-hidden="true"></i> H4 Consulting
+          </a>
+          <a onclick="gaLinkClicked(this)" id="tt-din" target="_blank" rel="nofollow" href="https://www.dincel.com.au/products">
+            <i class="fa fa-external-link" aria-hidden="true"></i> Dincel
+          </a>
+          <a onclick="gaLinkClicked(this)" id="tt-trav" target="_blank" rel="nofollow" href="http://www.thetraveller.sg/">
+            <i class="fa fa-external-link" aria-hidden="true"></i> The Traveller
+          </a>
+          <a onclick="gaLinkClicked(this)" id="tt-uw" target="_blank" rel="nofollow" href="https://www.undiewarehouse.com.au/">
+            <i class="fa fa-external-link" aria-hidden="true"></i> Undie Warehouse
+          </a>
+        </div>
+      </div>
+      <div class="background-addon">
         <div class="icon-wrapper">
           <i class="fa fa-cog cog1" aria-hidden="true"></i>
           <i class="fa fa-cog cog2" aria-hidden="true"></i>
           <i class="fa fa-cog cog3" aria-hidden="true"></i>
         </div>
-        <h2>Portfolio under construction</h2>
-      </div>
-      <p>While I work on the main portfolio feel free to check out a few of the public websites I've designed & developed:</p>
-      <div class="examples">
-        <a onclick="gaLinkClicked(this)" id="tt-h4" target="_blank" rel="nofollow" href="https://www.h4consulting.com.au/">
-          <i class="fa fa-external-link" aria-hidden="true"></i> H4 Consulting
-        </a>
-        <a onclick="gaLinkClicked(this)" id="tt-din" target="_blank" rel="nofollow" href="https://www.dincel.com.au/products">
-          <i class="fa fa-external-link" aria-hidden="true"></i> Dincel
-        </a>
-        <a onclick="gaLinkClicked(this)" id="tt-trav" target="_blank" rel="nofollow" href="http://www.thetraveller.sg/">
-          <i class="fa fa-external-link" aria-hidden="true"></i> The Traveller
-        </a>
-        <a onclick="gaLinkClicked(this)" id="tt-uw" target="_blank" rel="nofollow" href="https://www.undiewarehouse.com.au/">
-          <i class="fa fa-external-link" aria-hidden="true"></i> Undie Warehouse
-        </a>
       </div>
     </article>
     <article id="contact">
@@ -80,12 +81,12 @@
       <div id="copied"><h2>Copied!</h2></div>
       <div class="contactWrapper">
         <h3>
-            <a onclick="gaLinkClicked(this)" id="emailNew" href="mailto:hello@davidraffin.com.au?subject=I've just seen your website&amp;body=Hi David,%0D%0A%0D%0A"><i class="fa fa-envelope" aria-hidden="true"></i> hello@davidraffin.com.au</a> 
-            <a class="btn" onClick="ClipboardCopy('email')"><i id="emailCopy" class="fa fa-clipboard" aria-hidden="true"></i></a>
-        </h3>
-        <h3>
           <a onclick="gaLinkClicked(this)" id="phoneCall" href="tel:0423273004"><i class="fa fa-mobile" aria-hidden="true"></i> 0423 273 004</a> 
           <a class="btn" onClick="ClipboardCopy('phone')"><i id="phoneCopy" class="fa fa-clipboard" aria-hidden="true"></i></a>
+        </h3>
+        <h3>
+            <a onclick="gaLinkClicked(this)" id="emailNew" href="mailto:hello@davidraffin.com.au?subject=I've just seen your website&amp;body=Hi David,%0D%0A%0D%0A"><i class="fa fa-envelope" aria-hidden="true"></i> hello@davidraffin.com.au</a> 
+            <a class="btn" onClick="ClipboardCopy('email')"><i id="emailCopy" class="fa fa-clipboard" aria-hidden="true"></i></a>
         </h3>
         <h3>
           <a class="interngaLinkalLink" target="_blank" rel="nofollow" href="https://au.www.linkedin.com/in/david-raffin/"><i class="fa fa-linkedin-square" aria-hidden="true"></i> linkedin.com/au/david-raffin</a>
@@ -95,7 +96,7 @@
   </section>
   <div class="copyright">
     <object data="logo.svg" width="50px" height="50px"></object>
-    <p>© copyright David Raffin <span id="copyrightYear"></span>. ABN </p>
+    <p>© Copyright David Raffin <span id="copyrightYear"></span>. ABN 18 776 097 577</p>
   </div>
   
 
@@ -111,10 +112,7 @@
 
 <!--
   todo:
-  abn entered
-  middle section coloured
   gradient over sections
-  dropshadow over sections
   paralax working
   hover background animation in sections
   update resume to include web address
