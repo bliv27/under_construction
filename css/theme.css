@@ -63,15 +63,51 @@ body h3 {
 section {
   min-width: 500px;
   max-width: 700px;
-  margin: 150px auto 0;
+  margin: 150px auto 200px;
   width: 500px;
   padding: 3px;
-  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.5);
 }
 section .content, section #portfolio, section #contact {
-  background: url("../img/fabric_1.png");
+  position: relative;
   margin: 0;
   padding: 10px 50px;
+  overflow: visible;
+}
+section .content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 500px;
+  height: 494px;
+  border-radius: 30px 0 0 0;
+  z-index: -1;
+  transform: skew(0deg, -10deg);
+  background: url("../img/fabric_1.png");
+}
+section #portfolio::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 500px;
+  height: 345px;
+  /* border-radius: 0px 20px; */
+  z-index: -2;
+  transform: skew(0deg, 10deg);
+  background-color: #536872;
+}
+section #contact::after {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 0;
+  width: 500px;
+  height: 240px;
+  border-radius: 0 0 50px 0;
+  z-index: -1;
+  transform: skew(0deg, -7deg);
+  background: url("../img/fabric_1.png");
 }
 section #description {
   position: relative;
@@ -102,6 +138,12 @@ section #description .content {
   display: block;
   padding-top: 100px;
 }
+section #description .content span {
+  display: block;
+}
+section #description .content p {
+  transition: all 0.3s ease 0s;
+}
 section #portfolio {
   border-radius: 0;
 }
@@ -112,6 +154,7 @@ section #portfolio .construction .icon-wrapper {
   position: relative;
   display: inline-block;
   width: 100px;
+  display: none;
 }
 section #portfolio .construction .icon-wrapper i {
   position: absolute;
@@ -141,17 +184,17 @@ section #portfolio .construction .icon-wrapper i.cog3 {
 section #portfolio .construction h2 {
   position: relative;
   z-index: 100;
-  margin: 10px 0 30px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  text-align: right;
   padding-bottom: 3px;
-  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+section #portfolio p {
+  color: white;
 }
 section #portfolio .examples {
   display: flex;
   flex-flow: wrap;
   padding-bottom: 45px;
-  border-bottom: 1px solid white;
 }
 section #portfolio .examples a {
   flex: 1 1 0px;
@@ -159,6 +202,7 @@ section #portfolio .examples a {
   margin: 3px 0;
   text-align: center;
   border-radius: 3px;
+  color: white;
 }
 section #portfolio .examples a i {
   display: block;
@@ -200,7 +244,6 @@ section #contact h2 {
 section #contact .contactWrapper {
   display: inline-block;
   text-align: left;
-  padding-left: 20px;
 }
 section #contact .contactWrapper i {
   color: steelblue;

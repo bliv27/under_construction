@@ -73,16 +73,87 @@ body{
 section{
     min-width: 500px;
     max-width: 700px;
-    margin: 150px auto 0;
+    margin: 150px auto 200px;
     width: 500px;
     padding: 3px;
-    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, .5);
+    // box-shadow: 0 10px 20px 10px rgba(0, 0, 0, .5);
     
     .content, #portfolio, #contact{
         // background-color: #F1F3F5;
-        background: url('../img/fabric_1.png');
+        // background: url('../img/fabric_1.png');
+        position:relative;
         margin:0;
         padding:10px 50px;
+        overflow: visible;
+        
+        // &::after{
+        //     content:'';
+        //     position: absolute;
+        //     top:0;
+        //     left:0;
+        //     width: 500px;
+        //     height: 700px;
+        //     border-radius: 5px;;
+        //     z-index: -1;
+        //     transform: rotateX(15deg) skew(-5deg, -5deg);
+            
+        //     background: url('../img/fabric_1.png');
+        //     // box-shadow: 0 10px 20px 10px rgba(0, 0, 0, .5);
+        // }
+    }
+
+    .content{
+        &::after{
+            content:'';
+            position: absolute;
+
+            top: 0;
+            left: 0px;
+            width: 500px;
+            height: 494px;
+            border-radius: 30px 0 0 0;
+            z-index: -1;
+            transform: skew(0deg, -10deg);
+            
+            background: url('../img/fabric_1.png');
+            // box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .5);
+        }
+    }
+    #portfolio{
+        &::after{
+            content:'';
+            position: absolute;
+
+            top: -9px;
+            left: 0;
+            width: 500px;
+            height: 345px;
+            /* border-radius: 0px 20px; */
+            z-index: -2;
+            transform: skew(0deg, 10deg);
+            
+            background-color: #536872;
+            // background: url('../img/fabric_1.png');
+            // box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .5);
+        }
+    }
+    #contact{
+        &::after{
+            content:'';
+            position: absolute;
+
+            top: -28px;
+            left: 0;
+            width: 500px;
+            height: 240px;
+            border-radius: 0 0 50px 0;
+            z-index: -1;
+            transform: skew(0deg, -7deg) ;
+            
+            background: url('../img/fabric_1.png');
+            // box-shadow: 0 10px 20px 10px rgba(0, 0, 0, .5);
+            
+        }
         
     }
 
@@ -116,6 +187,12 @@ section{
             border-radius: 2px 2px 0 0 ;
             display: block;
             padding-top:100px;
+            span{
+                display:block;
+            }
+            p{
+                transition:all 0.3s ease 0s;
+            }
         }
     }
 
@@ -127,6 +204,7 @@ section{
                 position:relative;
                 display: inline-block;
                 width:100px;
+                display: none;
                 i{
                     position: absolute;
                     color: white;
@@ -154,21 +232,27 @@ section{
                     }
                 }
             }
+            
             h2{
                 position: relative;
                 z-index:100;
-                margin:10px 0 30px;
-                border-top: 1px solid white;
-                border-bottom: 1px solid white;
+                text-align:right;
+                // margin:10px 0 30px;
+                // border-top: 1px solid white;
+                // border-bottom: 1px solid white;
                 padding-bottom: 3px;
-                background-color: rgba(255, 255, 255, 0.2);
+                color: white;
+                // background-color: rgba(255, 255, 255, 0.2);
             }
+        }
+        p{
+            color: white;
         }
         .examples{
             display: flex;
             flex-flow: wrap;
             padding-bottom:45px;
-            border-bottom:1px solid white;
+            // border-bottom:1px solid white;
 
             a{
                 flex: 1 1 0px;
@@ -176,6 +260,7 @@ section{
                 margin:3px 0;
                 text-align: center;
                 border-radius: 3px;;
+                color:white;
                 i{
                     display:block;
                     color:steelblue;
@@ -225,7 +310,6 @@ section{
         .contactWrapper{
             display:inline-block;
             text-align: left;
-            padding-left: 20px;
             
             i{
                 color:steelblue;
