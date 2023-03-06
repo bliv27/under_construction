@@ -262,15 +262,16 @@ section{
 }
 
 
-.tippy-tooltip.david-theme {
-    background-color: rgba(0, 0, 0, .85);
-    text-align: center;
+#tippy-1,#tippy-2,#tippy-3,#tippy-4{
+    background-color: rgba(0, 0, 0, 1);
+    text-align: left;
     color:steelblue;
     font-size: 1.05rem;
     font-family: 'EB Garamond', serif;
     span{
-        text-align: center;
-        font-size: 0.6rem;
-        color: rgba(255, 255, 255, 0.5)
+        display: block;
+        text-align: left;
+        font-size: 0.8rem;
+        color:steelblue;
     }
 }

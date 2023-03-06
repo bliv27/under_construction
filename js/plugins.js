@@ -22,47 +22,70 @@
 
   //Setup typewriter function when the page is loaded
   var app = document.getElementById('type_text');
-  
   var typewriter = new Typewriter(app, {
   loop: false,
   delay: 75,
   cursor:'',
   });
-
   typewriter
   .typeString('Web Developer | Designer | Producer')
   .start();
 
-
-  //tooltips for 
+  //tooltips for external links
   tippy('#tt-h4', {
-    content: '2022: Custom front/backend theme built in Wordpress using gantry5 framework<br/><span>MySQL, PHP, JS, SCSS, HTML, TWIG/YAML</span>',
+    content: `
+      <span>Year</span>
+      2022
+      <span>Description</span>
+      Design & Development of the worpress front and backend theme allowing for regular updates to the resource sections and extensive browse functionality. 
+      <span>Tools/Languages</span>
+      Adobe Illustrator / MySQL, PHP, JS, SCSS, HTML, TWIG/YAML`,
     allowHTML: true,
     theme:'david',
-    maxWidth: 200,
+    maxWidth: 250,
     placement: 'left',
   });
   tippy('#tt-din', {
-    content: '2020: Custom front/backend built in Odoo14<br/><span>PostgreSQL, JS, SCSS, HTML, qWeb/XML</span>',
+    content: `
+      <span>Year</span>
+      2020
+      <span>Description</span>
+      Design & Development of the front and backend theme including all visual resources. Built in Odoo 13, with emphasis on usability and activity tracking. 
+      <span>Tools/Languages</span>
+      Adobe Illustrator, Photoshop / PostgreSQL, JS, jQuery, SCSS, HTML, qWeb/XML`,
     allowHTML: true,
     theme:'david',
-    maxWidth: 200,
+    maxWidth: 250,
     placement: 'right',
   });
   tippy('#tt-trav', {
-    content: '2014: Custom theme built in Wordpress<br/><span>MySQL, PHP, JS, CSS, HTML</span>',
+    content: `
+      <span>Year</span>
+      2014
+      <span>Description</span>
+      Custom theme designed and built in Wordpress. 
+      <span>Tools/Languages</span>
+      Adobe Illustrator / MySQL, PHP, JS, CSS, HTML`,
     allowHTML: true,
     theme:'david',
-    maxWidth: 200,
+    maxWidth: 250,
     placement: 'left',
   });
   tippy('#tt-uw', {
-    content: '2010: Custom theme built in Magento<br/><span>JS, CSS, HTML</span>',
+    content: `
+      <span>Year</span>
+      2010
+      <span>Description</span>
+      Custom theme designed and built in Magento. 
+      <span>Tools/Languages</span>
+      Adobe Illustrator, Photoshop / JS, CSS, HTML`,
     allowHTML: true,
     theme:'david',
-    maxWidth: 200,
+    maxWidth: 250,
     placement: 'right',
   });
+
+  //tooltips for copy to clipboard
   tippy('#phoneCopy', {
     content: 'Copy phone number',
     theme:'david',
@@ -79,19 +102,34 @@
  * ----------------------------------------------------------
  */
 
+function gaLinkClicked(elm){
+  console.log('link_trigger: '+elm.href)
+  window.dataLayer.push({
+    'event':'link_trigger', 
+    'link':elm.href
+  });
+}
+
 // on click copy the phone number or email 
 function ClipboardCopy(type){
   if(type == 'phone'){
     navigator.clipboard.writeText('0423273004');
   }else if(type == 'email'){
-    navigator.clipboard.writeText('david.raffin01@gmail.com');
+    navigator.clipboard.writeText('hello@davidraffin.com.au');
   }
+  //google analytics
+  console.log('copied_trigger: '+type)
+  window.dataLayer.push({
+    'event':'copied_trigger', 
+    'copied':type
+  });
   const icon = document.getElementById("copied");
   icon.classList.add('success')
   setTimeout(function(){
     icon.classList.remove('success')
   }, 2000)
-  
+
+
 };
 
 // on click of headshot image, scroll to contact

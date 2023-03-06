@@ -230,15 +230,16 @@ section #contact .contactWrapper .btn {
   transition: all 0.3s ease 0s;
 }
 
-.tippy-tooltip.david-theme {
-  background-color: rgba(0, 0, 0, 0.85);
-  text-align: center;
+#tippy-1, #tippy-2, #tippy-3, #tippy-4 {
+  background-color: rgb(0, 0, 0);
+  text-align: left;
   color: steelblue;
   font-size: 1.05rem;
   font-family: "EB Garamond", serif;
 }
-.tippy-tooltip.david-theme span {
-  text-align: center;
-  font-size: 0.6rem;
-  color: rgba(255, 255, 255, 0.5);
+#tippy-1 span, #tippy-2 span, #tippy-3 span, #tippy-4 span {
+  display: block;
+  text-align: left;
+  font-size: 0.8rem;
+  color: steelblue;
 }/*# sourceMappingURL=theme.css.map */
