@@ -95,6 +95,9 @@
     theme:'david',
   });
 
+  //setup copyright year
+  document.getElementById('copyrightYear').innerHTML = new Date().getFullYear()
+
 }());
 
 /* 
