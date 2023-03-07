@@ -98,6 +98,18 @@
   //setup copyright year
   document.getElementById('copyrightYear').innerHTML = new Date().getFullYear()
 
+  //parallax
+  var sections = document.querySelectorAll('.para');
+  new simpleParallax(sections, {
+      delay: 0,
+      orientation: 'down',
+      scale: 1.3,
+      overflow: true,
+  });
+
+  //force initial viewport on google chrome for mobile
+  viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute('content', 'width=device-width, initial-scale=1');
 }());
 
 /* 

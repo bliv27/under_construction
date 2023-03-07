@@ -41,6 +41,13 @@ $fontHeading:'Oswald', sans-serif;
     font-family: $fontBase;
 }
 
+@mixin mobile{
+    @media screen and (max-width: 500px) {
+        width:100%;
+        height:100%;
+    }
+}
+
 // Animations
 @keyframes rotation {
     from {
@@ -79,11 +86,7 @@ body{
     a{  
         text-decoration: none;
         cursor: pointer;
-
-        //convert this
-        &:hover{
-            background-color: $white;
-        }
+        position: relative;
     }
     .heading{
         margin-bottom:5px;
@@ -99,19 +102,22 @@ body{
 section{
     // content background
     // ---------------------
-    min-width: 500px;
-    max-width: 700px;
     margin: 150px auto 0;
     width: 500px;
-    padding: 3px;
+    @include mobile;
     
     #description .content, #portfolio, #contact{
         position:relative;
         margin:0;
-        padding:10px 50px;
+        padding:10px 50px 50px;
+        @media screen and (max-width: 500px) {
+            padding:10px 5px 50px;
+        }
         overflow: visible;
     }
-
+    #description{
+        z-index:9999999;
+    }
     #description .content{
         &::after{
             content:'';
@@ -120,12 +126,18 @@ section{
             top: 0;
             left: 0px;
             width: 500px;
-            height: 455px;
+            @include mobile;
+            height: 480px;
             border-radius: 30px 0 0 0;
             z-index: -1;
             transform: skew(0deg, -10deg);
             
-            background: $backgroundLight;
+            // background: $backgroundLight;
+            background-image:
+            linear-gradient(241deg,
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0)), 
+              url('../img/fabric_1.png');
             box-shadow: 0 0px 15px 1px $shadow;
         }
     }
@@ -137,15 +149,16 @@ section{
             top: -40px;
             left: 0;
             width: 500px;
+            @include mobile;
             height: 375px;
-            border-radius: 0px 20px;
+            border-radius: 0px 70px;
             z-index: -2;
             transform: skew(0deg, 10deg);
             
             background-image:
-            linear-gradient(-36deg,
+            linear-gradient(-25deg,
               rgba(5, 56, 80, 0.9),
-              rgba(4, 43, 61, 0.8),
+              rgba(0, 70, 108, 0.8),
               rgba(5, 56, 80, 0.9)), 
               url('../img/fabric_1.png');
         }
@@ -158,12 +171,18 @@ section{
             top: -28px;
             left: 0;
             width: 500px;
-            height: 200px;
+            @include mobile;
+            height: 220px;
             border-radius: 0 0 50px 0;
             z-index: -1;
             transform: skew(0deg, -7deg) ;
             
-            background: $backgroundLight;
+            // background: $backgroundLight;
+            background-image:
+            linear-gradient(241deg,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5)), 
+              url('../img/fabric_1.png');
             box-shadow: 0 -1px 15px 1px $shadow;
             
         }
@@ -213,7 +232,6 @@ section{
         .content{
             margin-top:40px;
             h2{
-                text-align:right;
                 color: $accentOnDark;
             }
             p{
@@ -237,6 +255,41 @@ section{
                     i{
                         display:block;
                         color:$accentOnDark;
+                    }
+
+                    span{
+                        z-index: 100;
+                        position: relative;
+                        transform: translateY(0);
+                        transition:all 0.3s ease 0s;
+                    }
+            
+                    &::after{
+                        content:'';
+                        background-color: rgba(0, 0, 0, .2);
+                        position:absolute;
+                        opacity:0;
+                        z-index:1;
+                        top:0;
+                        left:0;
+                        height:100%;
+                        width:100%;
+                        box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .3);
+                        border-radius:3px;
+                        transform: translateY(0);
+                        transition:all 0.3s ease 0s;
+                    }
+
+                    &:hover{
+                        &>span{
+                            transform:translateY(-2px);
+                            transition:all 0.3s ease 0s;
+                        }
+                        &::after{
+                            opacity:1;
+                            transform:translateY(-2px);
+                            transition:all 0.3s ease 0s;
+                        }
                     }
                 }
             }
@@ -292,24 +345,26 @@ section{
             width: 100px;
             height:100px;
             border-radius: 50%;
+            border:1px dashed $accentOnLight;
             text-align: center;
             opacity: 0;
-            z-index: 100;
+            z-index: 999;
             transition:
                 opacity 0.3s ease 0s, 
                 scale 0.3s ease 0s,
-                transform 0s ease 0.3s;
+                translate 0s ease 0.3s;
             color:$accentOnLight;
             background-color: $white;
-            transform:translateX(250px) scale(0);
+            box-shadow: 0 0px 15px 1px $shadow;
+            transform:translateY(250px) scale(0);
             
             &.success{
                 opacity:1;
-                transform:translateX(0) scale(1);
+                transform:translateY(0) scale(1);
                 transition:
                     opacity 0.3s ease 0s,
                     scale 0.3s ease 0s,
-                    transform 0s ease 0s;
+                    translate 0s ease 0s;
             }
 
             h2{
@@ -325,6 +380,7 @@ section{
         .contactWrapper{
             display:inline-block;
             text-align: left;
+            padding-left:30px;
             
             h3{
                 display: flex;
@@ -338,30 +394,79 @@ section{
                 }
 
                 a{
-                    padding: 2px 5px;
+                    padding: 4px 10px;
+                    overflow-x: hidden;
 
                     &.btn{
                         background-color: $white;
                         border-radius: 50%;
-                        padding:3px 6px;
+                        padding:3px;
                         margin-left:10px;
                         opacity: 0;
+                        @media screen and (max-width: 500px) {
+                            opacity: 1;
+                        }
                         transform:scale(0);
                         transition:all 0.3s ease 0s;
                     }
 
                     i{
                         color:$accentOnLight;
+                        padding-right:8px;
         
                         &.fa-mobile{
                             font-size: 1.5rem;
                             margin: 0 3px;
                             vertical-align: top;
                         }
+
+                        &.fa-clipboard{
+                            padding:5px;
+                        }
+                    }
+                }
+                a:not(.btn){
+                    span{
+                        z-index: 100;
+                        position: relative;
+                        transform: translateX(0);
+                        transition:all 0.3s ease 0s;
+                    }
+            
+                    &::after{
+                        content:'';
+                        background-color: $white;
+                        position:absolute;
+                        opacity:0;
+                        z-index:1;
+                        top:0;
+                        left:0;
+                        height:100%;
+                        width:100%;
+                        border-radius:0 0 10px 0;
+                        transform: translateX(-100%);
+                        transition:
+                            opacity 0.3s ease 0s,
+                            transform 0.3s ease 0s;
+                    }
+                    &:hover{
+                        &>span{
+                            transform:translateY(-2px);
+                            transition:all 0.3s ease 0s;
+                        }
+                        &::after{
+                            opacity:1;
+                            transform:translateY(-2px);
+                            transition:
+                                opacity 0.1s ease 0s,
+                                transform 0.3s ease 0s;
+                        }
+                    }
+                    &:focus{
+                        color:$accentOnLight;
                     }
                 }
             }
-
         }
     }
 }
@@ -375,10 +480,13 @@ section{
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    object{
+        opacity: .5;
+    }
     p{
         font-size: 0.7rem;
     }
-    
     
     #copyrightYear{
         display: inline-block;
@@ -387,15 +495,24 @@ section{
 
 //tooltips
 #tippy-1,#tippy-2,#tippy-3,#tippy-4{
-    background-color: rgba(0, 0, 0, 1);
+    
     text-align: left;
     color:$accentOnLight;
     font-size: 1.05rem;
     font-family: $fontBase;
+    &>div{
+        background-color: rgba(0, 0, 0, 1);
+        border-radius: 5px;
+        border:1px dashed $accentOnLight;
+        box-shadow: 0 0px 15px 1px $shadow;
+    }
     span{
         display: block;
         text-align: left;
         font-size: 0.8rem;
         color:$accentOnLight;
+    }
+    .tippy-arrow{
+        display:none
     }
 }
