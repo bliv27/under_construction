@@ -69,11 +69,6 @@ section #description .content, section #portfolio, section #contact {
   padding: 10px 50px 50px;
   overflow: visible;
 }
-@media screen and (max-width: 500px) {
-  section #description .content, section #portfolio, section #contact {
-    padding: 10px 5px 50px;
-  }
-}
 section #description {
   z-index: 9999999;
 }
@@ -84,7 +79,7 @@ section #description .content::after {
   left: 0px;
   width: 500px;
   height: 480px;
-  border-radius: 30px 0 0 0;
+  border-radius: 50px 3px 3px 3px;
   z-index: -1;
   transform: skew(0deg, -10deg);
   background-image: linear-gradient(241deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)), url("../img/fabric_1.png");
@@ -96,24 +91,6 @@ section #description .content::after {
     height: 100%;
   }
 }
-section #portfolio::after {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 500px;
-  height: 375px;
-  border-radius: 0px 70px;
-  z-index: -2;
-  transform: skew(0deg, 10deg);
-  background-image: linear-gradient(-25deg, rgba(5, 56, 80, 0.9), rgba(0, 70, 108, 0.8), rgba(5, 56, 80, 0.9)), url("../img/fabric_1.png");
-}
-@media screen and (max-width: 500px) {
-  section #portfolio::after {
-    width: 100%;
-    height: 100%;
-  }
-}
 section #contact::after {
   content: "";
   position: absolute;
@@ -121,9 +98,9 @@ section #contact::after {
   left: 0;
   width: 500px;
   height: 220px;
-  border-radius: 0 0 50px 0;
+  border-radius: 3px 3px 50px 3px;
   z-index: -1;
-  transform: skew(0deg, -7deg);
+  transform: skew(0deg, -10deg);
   background-image: linear-gradient(241deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)), url("../img/fabric_1.png");
   box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, 0.5);
 }
@@ -149,6 +126,7 @@ section #description .header-image a {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  z-index: 1000;
   display: inline-block;
   box-shadow: 0 0px 15px 1px rgba(0, 0, 0, 0.5);
 }
@@ -171,9 +149,13 @@ section #portfolio .content p {
   color: #dde3e6;
 }
 section #portfolio .content .examples {
-  display: flex;
-  flex-flow: wrap;
   padding-bottom: 45px;
+}
+@media screen and (min-width: 500px) {
+  section #portfolio .content .examples {
+    display: flex;
+    flex-flow: wrap;
+  }
 }
 section #portfolio .content .examples a {
   font-size: 0.9rem;
@@ -186,9 +168,28 @@ section #portfolio .content .examples a {
   border-radius: 3px;
   color: #dde3e6;
 }
+@media screen and (max-width: 500px) {
+  section #portfolio .content .examples a {
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+    margin: 15px 0;
+  }
+}
 section #portfolio .content .examples a i {
   display: block;
   color: rgb(103, 187, 255);
+  font-size: 1.3rem;
+  opacity: 0.5;
+  margin-bottom: 10px;
+  transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 500px) {
+  section #portfolio .content .examples a i {
+    display: inline;
+    font-size: 1rem;
+    padding-right: 10px;
+  }
 }
 section #portfolio .content .examples a span {
   z-index: 100;
@@ -208,6 +209,7 @@ section #portfolio .content .examples a::after {
   width: 100%;
   box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
+  border: 1px dashed rgb(103, 187, 255);
   transform: translateY(0);
   transition: all 0.3s ease 0s;
 }
@@ -220,37 +222,38 @@ section #portfolio .content .examples a:hover::after {
   transform: translateY(-2px);
   transition: all 0.3s ease 0s;
 }
-section #portfolio .background-addon {
-  text-align: center;
+section #portfolio .content .examples a:hover i {
+  opacity: 1;
+  transition: all 0.3s ease 0s;
 }
-section #portfolio .background-addon .icon-wrapper {
+section #portfolio .icon-wrapper {
   position: relative;
-  display: inline-block;
-  width: 100px;
-  display: none;
+  display: block;
+  width: 100%;
+  opacity: 0.2;
 }
-section #portfolio .background-addon .icon-wrapper i {
+section #portfolio .icon-wrapper i {
   position: absolute;
   color: white;
 }
-section #portfolio .background-addon .icon-wrapper i.cog1 {
-  font-size: 5rem;
-  top: -3px;
-  left: 8px;
+section #portfolio .icon-wrapper i.cog1 {
+  font-size: 7rem;
+  top: -85px;
+  right: 8px;
   text-align: center;
   animation: rotation 4s infinite linear;
 }
-section #portfolio .background-addon .icon-wrapper i.cog2 {
-  font-size: 2.5rem;
-  top: -4px;
-  left: -25px;
+section #portfolio .icon-wrapper i.cog2 {
+  font-size: 4rem;
+  top: -68px;
+  right: 108px;
   text-align: center;
   animation: rotationreverse 2s infinite linear;
 }
-section #portfolio .background-addon .icon-wrapper i.cog3 {
-  font-size: 2.5rem;
-  top: 34px;
-  left: 76px;
+section #portfolio .icon-wrapper i.cog3 {
+  font-size: 5rem;
+  top: -20px;
+  left: 0;
   text-align: center;
   animation: rotationreverse 2s infinite linear;
 }
@@ -291,6 +294,11 @@ section #contact .contactWrapper {
   text-align: left;
   padding-left: 30px;
 }
+@media screen and (max-width: 500px) {
+  section #contact .contactWrapper {
+    padding-left: 0;
+  }
+}
 section #contact .contactWrapper h3 {
   display: flex;
   margin: 0;
@@ -314,7 +322,7 @@ section #contact .contactWrapper h3 a.btn {
 }
 @media screen and (max-width: 500px) {
   section #contact .contactWrapper h3 a.btn {
-    opacity: 1;
+    display: none;
   }
 }
 section #contact .contactWrapper h3 a i {

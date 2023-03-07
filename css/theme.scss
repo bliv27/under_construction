@@ -110,9 +110,6 @@ section{
         position:relative;
         margin:0;
         padding:10px 50px 50px;
-        @media screen and (max-width: 500px) {
-            padding:10px 5px 50px;
-        }
         overflow: visible;
     }
     #description{
@@ -128,7 +125,7 @@ section{
             width: 500px;
             @include mobile;
             height: 480px;
-            border-radius: 30px 0 0 0;
+            border-radius: 50px 3px 3px 3px;
             z-index: -1;
             transform: skew(0deg, -10deg);
             
@@ -141,28 +138,6 @@ section{
             box-shadow: 0 0px 15px 1px $shadow;
         }
     }
-    #portfolio{
-        &::after{
-            content:'';
-            position: absolute;
-
-            top: -40px;
-            left: 0;
-            width: 500px;
-            @include mobile;
-            height: 375px;
-            border-radius: 0px 70px;
-            z-index: -2;
-            transform: skew(0deg, 10deg);
-            
-            background-image:
-            linear-gradient(-25deg,
-              rgba(5, 56, 80, 0.9),
-              rgba(0, 70, 108, 0.8),
-              rgba(5, 56, 80, 0.9)), 
-              url('../img/fabric_1.png');
-        }
-    }
     #contact{
         &::after{
             content:'';
@@ -173,9 +148,9 @@ section{
             width: 500px;
             @include mobile;
             height: 220px;
-            border-radius: 0 0 50px 0;
+            border-radius: 3px 3px 50px 3px;
             z-index: -1;
-            transform: skew(0deg, -7deg) ;
+            transform: skew(0deg, -10deg) ;
             
             // background: $backgroundLight;
             background-image:
@@ -200,7 +175,6 @@ section{
             top:-100px;
             width:100%;
             margin:0 auto;
-            
 
             a{
                 width: 200px;
@@ -208,6 +182,7 @@ section{
                 position: relative;
                 overflow: hidden;
                 border-radius: 50%;
+                z-index:1000;
                 display:inline-block;
                 box-shadow: 0 0px 15px 1px $shadow;
 
@@ -239,9 +214,11 @@ section{
             }
 
             .examples{
-                display: flex;
-                flex-flow: wrap;
                 padding-bottom:45px;
+                @media screen and (min-width: 500px) {
+                    display: flex;
+                    flex-flow: wrap;
+                }
 
                 a{
                     @include text-subtext;
@@ -251,10 +228,25 @@ section{
                     text-align: center;
                     border-radius: 3px;
                     color: $textOnDark;
+                    @media screen and (max-width: 500px) {
+                        width:100%;
+                        display: block;
+                        padding:10px 0;
+                        margin:15px 0;
+                    }
 
                     i{
                         display:block;
                         color:$accentOnDark;
+                        font-size: 1.3rem;
+                        opacity: 0.5;
+                        margin-bottom: 10px;
+                        transition:all 0.3s ease 0s;
+                        @media screen and (max-width: 500px) {
+                            display: inline;
+                            font-size: 1rem;
+                            padding-right:10px;
+                        }
                     }
 
                     span{
@@ -276,6 +268,7 @@ section{
                         width:100%;
                         box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .3);
                         border-radius:3px;
+                        border:1px dashed $accentOnDark;
                         transform: translateY(0);
                         transition:all 0.3s ease 0s;
                     }
@@ -290,44 +283,46 @@ section{
                             transform:translateY(-2px);
                             transition:all 0.3s ease 0s;
                         }
+
+                        i{
+                            opacity: 1;
+                            transition:all 0.3s ease 0s;
+                        }
                     }
                 }
             }
         }
 
-        .background-addon{
-            text-align: center;
+        .icon-wrapper{
+            position:relative;
+            display: block;
+            width:100%;
+            opacity: 0.2;
 
-            .icon-wrapper{
-                position:relative;
-                display: inline-block;
-                width:100px;
-                display: none;
-                i{
-                    position: absolute;
-                    color: $white;
-                    
-                    &.cog1{
-                        font-size: 5rem;
-                        top: -3px;
-                        left:8px;
-                        text-align: center;
-                        animation: rotation 4s infinite linear;
-                    }
-                    &.cog2{
-                        font-size: 2.5rem;
-                        top: -4px;
-                        left: -25px;
-                        text-align: center;
-                        animation: rotationreverse 2s infinite linear;
-                    }
-                    &.cog3{
-                        font-size: 2.5rem;
-                        top: 34px;
-                        left: 76px;
-                        text-align: center;
-                        animation: rotationreverse 2s infinite linear;
-                    }
+            i{
+                position: absolute;
+                color: $white;
+                
+                &.cog1{
+                    font-size: 7rem;
+                    top: -85px;
+                    right: 8px;
+                    text-align: center;
+                    animation: rotation 4s infinite linear;
+                }
+                &.cog2{
+                    font-size: 4rem;
+                    top: -68px;
+                    right: 108px;
+                    text-align: center;
+                    animation: rotationreverse 2s infinite linear;
+                }
+                &.cog3{
+                    font-size: 5rem;
+                    top: -20px;
+                    left: 0;
+                    text-align: center;
+                    animation: rotationreverse 2s infinite linear;
                 }
             }
         }
@@ -381,7 +376,9 @@ section{
             display:inline-block;
             text-align: left;
             padding-left:30px;
-            
+            @media screen and (max-width: 500px) {
+                padding-left:0;
+            }
             h3{
                 display: flex;
                 margin:0;
@@ -403,10 +400,10 @@ section{
                         padding:3px;
                         margin-left:10px;
                         opacity: 0;
-                        @media screen and (max-width: 500px) {
-                            opacity: 1;
-                        }
                         transform:scale(0);
+                        @media screen and (max-width: 500px) {
+                            display: none;
+                        }
                         transition:all 0.3s ease 0s;
                     }
 

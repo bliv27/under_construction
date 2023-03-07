@@ -24,11 +24,11 @@
   var app = document.getElementById('type_text');
   var typewriter = new Typewriter(app, {
   loop: false,
-  delay: 75,
+  delay: 35,
   cursor:'',
   });
   typewriter
-  .typeString('Web Developer | Designer | Producer')
+  .typeString('Web Developer & Designer')
   .start();
 
   //tooltips for external links
@@ -107,9 +107,6 @@
       overflow: true,
   });
 
-  //force initial viewport on google chrome for mobile
-  viewport = document.querySelector("meta[name=viewport]");
-  viewport.setAttribute('content', 'width=device-width, initial-scale=1');
 }());
 
 /* 
